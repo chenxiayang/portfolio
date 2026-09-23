@@ -1,0 +1,202 @@
+/* ==========================================================================
+   responsive.css — 平板（≤1024px）与手机（≤640px）断点适配
+   ========================================================================== */
+
+/* ---------- 平板 ---------- */
+@media (max-width: 1024px) {
+  :root {
+    --gap-grid: 1.2rem;
+  }
+
+  /* 网格降为 8 列 */
+  .works-grid,
+  .project {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .project--cover .project-info {
+    grid-column: 1 / 9;
+    margin-top: -3rem;
+  }
+
+  .project--split .project-media {
+    grid-column: 1 / 6;
+  }
+
+  .project--split .project-info {
+    grid-column: 6 / 9;
+    position: static;
+  }
+
+  .project--split.is-mirrored .project-media {
+    grid-column: 4 / 9;
+  }
+
+  .project--split.is-mirrored .project-info {
+    grid-column: 1 / 4;
+  }
+
+  .project--text .project-info {
+    grid-column: 1 / 7;
+  }
+
+  .project--text .project-media {
+    grid-column: 7 / 9;
+  }
+
+  .project--banner .project-info {
+    grid-column: 1 / 6;
+  }
+
+  .project--banner .project-media {
+    grid-column: 6 / 9;
+  }
+
+  .project--offset {
+    min-height: 0;
+  }
+
+  .project--offset .project-media {
+    grid-column: 1 / 6;
+  }
+
+  .project--offset .project-info {
+    grid-column: 5 / 9;
+    margin-top: 3rem;
+  }
+
+  .project--offset .project-media-secondary {
+    display: none;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-head {
+    position: static;
+  }
+}
+
+/* ---------- 移动端导航 ---------- */
+@media (max-width: 860px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+  }
+
+  .site-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* ---------- 手机 ---------- */
+@media (max-width: 640px) {
+  :root {
+    --space-section: 4.5rem;
+  }
+
+  /* 所有项目退化为单列：图上文下 */
+  .works-grid,
+  .project {
+    grid-template-columns: 1fr;
+  }
+
+  .project--cover,
+  .project--split,
+  .project--text,
+  .project--banner,
+  .project--offset {
+    min-height: 0;
+  }
+
+  /* 统一让图片在前、文字在后 */
+  .project-media,
+  .project--cover .project-media,
+  .project--split .project-media,
+  .project--split.is-mirrored .project-media,
+  .project--text .project-media,
+  .project--banner .project-media,
+  .project--offset .project-media {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    aspect-ratio: 16 / 10;
+  }
+
+  .project-info,
+  .project--cover .project-info,
+  .project--split .project-info,
+  .project--split.is-mirrored .project-info,
+  .project--text .project-info,
+  .project--banner .project-info,
+  .project--offset .project-info {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: 1.5rem;
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    position: static;
+  }
+
+  .project--cover .project-info {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .project--text .project-body {
+    columns: 1;
+  }
+
+  .project--offset .project-media-secondary {
+    display: none;
+  }
+
+  /* 横幅色块在手机端保留，但改为纵向排布 */
+  .project--banner {
+    padding: 2rem 1.4rem;
+  }
+
+  .works-grid {
+    gap: 4.5rem;
+  }
+
+  .about-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .scroll-hint {
+    display: none;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

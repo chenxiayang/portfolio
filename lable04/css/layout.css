@@ -1,0 +1,187 @@
+/* ==========================================================================
+   layout.css — 容器、12 列网格、区块节奏、导航与页脚布局
+   ========================================================================== */
+
+/* ---------- 容器 ---------- */
+.container {
+  width: min(1240px, 100% - clamp(2rem, 6vw, 6rem));
+  margin-inline: auto;
+}
+
+/* ---------- 12 列杂志网格 ---------- */
+.mag-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gap-grid);
+}
+
+/* ---------- 区块通用节奏 ---------- */
+section {
+  padding-block: var(--space-section);
+  scroll-margin-top: var(--header-h);
+}
+
+.section-head {
+  margin-bottom: clamp(2.5rem, 6vw, 5rem);
+}
+
+.section-kicker {
+  font-family: var(--font-mono);
+  font-size: var(--fs-kicker);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: var(--fs-section);
+  letter-spacing: -0.01em;
+}
+
+/* ---------- 顶部导航 ---------- */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  background: color-mix(in srgb, var(--color-bg) 82%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.site-header.is-scrolled {
+  border-bottom-color: var(--color-line);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.brand-dot {
+  color: var(--color-accent);
+}
+
+.site-nav {
+  display: block;
+}
+
+.nav-list {
+  display: flex;
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+}
+
+.nav-link {
+  position: relative;
+  font-size: var(--fs-small);
+  letter-spacing: 0.12em;
+  padding-block: 0.4rem;
+  color: var(--color-ink-soft);
+  transition: color var(--transition);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  color: var(--color-ink);
+}
+
+.nav-link.is-active::after,
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---------- 首屏 ---------- */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding-top: var(--header-h);
+}
+
+/* ---------- 关于我：双栏 ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.about-head {
+  position: sticky;
+  top: calc(var(--header-h) + 2rem);
+}
+
+/* ---------- 联系方式 ---------- */
+.contact {
+  background: var(--color-block);
+  color: var(--color-surface);
+}
+
+.contact .section-kicker {
+  color: color-mix(in srgb, var(--color-accent) 70%, white);
+}
+
+/* ---------- 页脚 ---------- */
+.site-footer {
+  background: var(--color-block);
+  color: color-mix(in srgb, var(--color-surface) 70%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--color-surface) 18%, transparent);
+  padding-block: 2.5rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  font-size: var(--fs-small);
+}
+
+.footer-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-nav a:hover {
+  color: var(--color-surface);
+}
+
+.footer-mail {
+  font-family: var(--font-mono);
+}
+
+.footer-copy {
+  width: 100%;
+  opacity: 0.6;
+}
