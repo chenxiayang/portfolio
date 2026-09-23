@@ -81,6 +81,15 @@
 
 /* ---------- 移动端导航 ---------- */
 @media (max-width: 860px) {
+  .header-inner {
+    justify-content: space-between;
+  }
+
+  .theme-toggle {
+    margin-left: auto;
+    margin-right: 0.75rem;
+  }
+
   .menu-toggle {
     display: flex;
   }

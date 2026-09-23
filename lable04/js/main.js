@@ -225,6 +225,39 @@
     items.forEach((el) => revealObserver.observe(el));
   }
 
+  /* ---------- 7. 主题切换 ---------- */
+  const themeToggle = document.getElementById("theme-toggle");
+  const root = document.documentElement;
+
+  function syncThemeButton(theme) {
+    if (!themeToggle) return;
+    const isDark = theme === "dark";
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+    themeToggle.setAttribute("aria-label", isDark ? "切换为浅色主题" : "切换为深色主题");
+  }
+
+  syncThemeButton(root.getAttribute("data-theme") === "dark" ? "dark" : "light");
+
+  if (themeToggle) {
+    let transitionTimer = null;
+
+    themeToggle.addEventListener("click", () => {
+      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+
+      // 切换瞬间启用过渡类，结束后移除，避免长期 transition 影响性能
+      root.classList.add("theme-transition");
+      root.setAttribute("data-theme", next);
+
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      syncThemeButton(next);
+
+      clearTimeout(transitionTimer);
+      transitionTimer = setTimeout(() => {
+        root.classList.remove("theme-transition");
+      }, 300);
+    });
+  }
+
   /* ---------- 启动 ---------- */
   render();
   buildFilters();

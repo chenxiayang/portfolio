@@ -186,7 +186,7 @@
    ========================================================================== */
 .project--banner {
   background: var(--color-block);
-  color: var(--color-surface);
+  color: var(--color-on-block);
   grid-column: 1 / -1;
   grid-template-columns: repeat(12, 1fr);
   padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 4rem);
@@ -197,12 +197,12 @@
 }
 
 .project--banner .project-meta {
-  color: color-mix(in srgb, var(--color-surface) 60%, transparent);
+  color: color-mix(in srgb, var(--color-on-block) 60%, transparent);
 }
 
 .project--banner .project-category {
-  color: var(--color-surface);
-  border-bottom-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+  color: var(--color-on-block);
+  border-bottom-color: color-mix(in srgb, var(--color-on-block) 50%, transparent);
 }
 
 .project--banner .project-index {
@@ -211,23 +211,23 @@
 
 .project--banner .project-summary,
 .project--banner .project-detail {
-  color: color-mix(in srgb, var(--color-surface) 75%, transparent);
+  color: color-mix(in srgb, var(--color-on-block) 75%, transparent);
 }
 
 .project--banner .tech-tags {
   margin-top: 1.8rem;
   padding-top: 1.4rem;
-  border-top: 1px solid color-mix(in srgb, var(--color-surface) 22%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--color-on-block) 22%, transparent);
 }
 
 .project--banner .tech-tags li {
   background: transparent;
-  border-color: color-mix(in srgb, var(--color-surface) 30%, transparent);
-  color: var(--color-surface);
+  border-color: color-mix(in srgb, var(--color-on-block) 30%, transparent);
+  color: var(--color-on-block);
 }
 
 .project--banner .link-arrow {
-  color: var(--color-surface);
+  color: var(--color-on-block);
 }
 
 .project--banner .project-media {

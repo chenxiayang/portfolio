@@ -61,7 +61,7 @@ section {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
 }
 
@@ -78,6 +78,7 @@ section {
 
 .site-nav {
   display: block;
+  margin-left: auto;
 }
 
 .nav-list {
@@ -144,7 +145,7 @@ section {
 /* ---------- 联系方式 ---------- */
 .contact {
   background: var(--color-block);
-  color: var(--color-surface);
+  color: var(--color-on-block);
 }
 
 .contact .section-kicker {
@@ -154,8 +155,8 @@ section {
 /* ---------- 页脚 ---------- */
 .site-footer {
   background: var(--color-block);
-  color: color-mix(in srgb, var(--color-surface) 70%, transparent);
-  border-top: 1px solid color-mix(in srgb, var(--color-surface) 18%, transparent);
+  color: color-mix(in srgb, var(--color-on-block) 70%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--color-on-block) 18%, transparent);
   padding-block: 2.5rem;
 }
 
@@ -174,7 +175,7 @@ section {
 }
 
 .footer-nav a:hover {
-  color: var(--color-surface);
+  color: var(--color-on-block);
 }
 
 .footer-mail {

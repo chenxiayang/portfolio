@@ -52,6 +52,7 @@ button {
   --color-accent: #e8442e;       /* 强调红 */
   --color-accent-ink: #ffffff;
   --color-block: #1d3a2f;        /* 局部色块绿 */
+  --color-on-block: #ffffff;     /* 色块/深色区上的前景色（文字、边框） */
 
   /* 字体 */
   --font-display: "Georgia", "Songti SC", "SimSun", serif;
@@ -75,6 +76,33 @@ button {
   --header-h: 4.5rem;
   --radius: 2px;
   --transition: 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* ---------- 深色主题 ---------- */
+[data-theme="dark"] {
+  --color-bg: #17150f;           /* 深色底取浅色主题主文字的墨色，保持同一色系 */
+  --color-surface: #211e16;      /* 卡片背景 */
+  --color-ink: #ece7db;          /* 主文字（对比度约 13:1） */
+  --color-ink-soft: #b3ab9a;     /* 次级文字（对比度约 7:1） */
+  --color-line: #3a352a;         /* 分割线 */
+  --color-accent: #f0563f;       /* 强调红提亮，保证深底对比度 ≥ 4.5:1 */
+  --color-accent-ink: #ffffff;
+  --color-block: #234437;        /* 局部色块绿略提亮，与页面底色区分 */
+  --color-on-block: #ece7db;
+}
+
+/* 主题切换过渡：仅在切换瞬间（html.theme-transition）参与，
+   只过渡颜色相关属性，避免所有元素长期带 transition 造成卡顿 */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: background-color 0.25s ease,
+              border-color 0.25s ease,
+              color 0.25s ease,
+              fill 0.25s ease,
+              stroke 0.25s ease,
+              box-shadow 0.25s ease !important;
 }
 
 /* ---------- 全局排版 ---------- */
