@@ -1,0 +1,371 @@
+/* ==========================================================================
+   components.css — 标签、按钮、菜单、滚动提示、筛选器等组件
+   ========================================================================== */
+
+/* ---------- 首屏组件 ---------- */
+.hero-kicker {
+  font-family: var(--font-mono);
+  font-size: var(--fs-kicker);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  margin-bottom: 1.2rem;
+}
+
+.hero-title {
+  font-size: var(--fs-hero);
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
+}
+
+/* 姓名后的局部色块 */
+.accent-block {
+  display: inline-block;
+  width: 0.22em;
+  height: 0.85em;
+  margin-left: 0.15em;
+  background: var(--color-accent);
+  vertical-align: -0.05em;
+}
+
+.hero-sub {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero-sub);
+  margin-top: 1.2rem;
+}
+
+.hero-sub em {
+  font-style: normal;
+  color: var(--color-ink-soft);
+}
+
+.hero-sub em:not(:last-child)::after {
+  content: "·";
+  margin-inline: 0.6rem;
+  color: var(--color-accent);
+}
+
+.hero-desc {
+  margin-top: 1.8rem;
+  max-width: 46ch;
+  color: var(--color-ink-soft);
+}
+
+/* 技能标签 */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 2.4rem;
+}
+
+.skill-tags li {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--color-ink);
+  border-radius: 999px;
+  transition: background var(--transition), color var(--transition);
+}
+
+.skill-tags li:hover {
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+
+/* 滚动提示 */
+.scroll-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  color: var(--color-ink-soft);
+}
+
+.scroll-hint-line {
+  width: 1px;
+  height: 3rem;
+  background: var(--color-ink-soft);
+  animation: hint-drop 2s ease-in-out infinite;
+  transform-origin: top;
+}
+
+@keyframes hint-drop {
+  0%   { transform: scaleY(0); }
+  45%  { transform: scaleY(1); }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ---------- 汉堡菜单按钮 ---------- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2.4rem;
+  height: 2.4rem;
+  z-index: 110;
+}
+
+.menu-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin-inline: auto;
+  background: var(--color-ink);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- 类别筛选 ---------- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.filter-btn {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.08em;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  color: var(--color-ink-soft);
+  transition: all var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.filter-btn.is-active {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-bg);
+}
+
+/* ---------- 技术栈标签（项目内） ---------- */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tech-tags li {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.65rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  color: var(--color-ink-soft);
+}
+
+/* ---------- 项目元信息（序号/类别/时间） ---------- */
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.8rem 1.4rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-kicker);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  margin-bottom: 0.9rem;
+}
+
+.project-index {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0;
+}
+
+.project-category {
+  color: var(--color-ink);
+  border-bottom: 1px solid var(--color-accent);
+  padding-bottom: 2px;
+}
+
+/* ---------- 分割线 ---------- */
+.rule {
+  border: none;
+  border-top: 1px solid var(--color-line);
+  margin-block: 1.4rem;
+}
+
+/* ---------- 项目链接入口 ---------- */
+.project-links {
+  display: flex;
+  gap: 1.4rem;
+  margin-top: 1.2rem;
+}
+
+.link-arrow {
+  position: relative;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding-bottom: 3px;
+}
+
+.link-arrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0.35);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.link-arrow:hover::after {
+  transform: scaleX(1);
+}
+
+/* ---------- 关于我：时间线与点列表 ---------- */
+.about-lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.55;
+  margin-bottom: 1.4rem;
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.about-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin-top: 2.8rem;
+}
+
+.about-col-title {
+  font-size: 1rem;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--color-ink);
+  margin-bottom: 1.2rem;
+}
+
+.timeline-list li {
+  position: relative;
+  padding-left: 4.2rem;
+  margin-bottom: 1.1rem;
+  color: var(--color-ink-soft);
+}
+
+.timeline-year {
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-accent);
+}
+
+.dot-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.9rem;
+  color: var(--color-ink-soft);
+}
+
+.dot-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* ---------- 联系方式组件 ---------- */
+.contact-title {
+  margin-bottom: 1.5rem;
+}
+
+.contact-desc {
+  max-width: 52ch;
+  color: color-mix(in srgb, var(--color-surface) 75%, transparent);
+  margin-bottom: 3rem;
+}
+
+.contact-mail {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4.5vw, 3.4rem);
+  line-height: 1.2;
+  word-break: break-all;
+  border-bottom: 2px solid color-mix(in srgb, var(--color-surface) 40%, transparent);
+  padding-bottom: 0.3rem;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.contact-mail:hover {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin-top: 3rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.08em;
+}
+
+.social-links a,
+.social-links span {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid color-mix(in srgb, var(--color-surface) 35%, transparent);
+  border-radius: 999px;
+}
+
+.social-links a {
+  transition: all var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--color-surface);
+  color: var(--color-block);
+}

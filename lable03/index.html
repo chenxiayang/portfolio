@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>陈堯 · 软件工程作品集</title>
+  <meta name="description" content="陈堯的个人作品集 — 软件工程学生，关注 AI 辅助开发与大语言模型应用">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ===== 顶部导航 ===== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="#intro" class="brand" aria-label="返回顶部">CY<span class="brand-dot">.</span></a>
+
+      <nav class="site-nav" id="site-nav" aria-label="主导航">
+        <ul class="nav-list">
+          <li><a href="#intro" class="nav-link" data-section="intro">介绍</a></li>
+          <li><a href="#works" class="nav-link" data-section="works">项目作品</a></li>
+          <li><a href="#about" class="nav-link" data-section="about">关于我</a></li>
+          <li><a href="#contact" class="nav-link" data-section="contact">联系方式</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="打开菜单">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== 首屏 / 个人介绍 ===== -->
+    <section id="intro" class="hero">
+      <div class="container">
+        <p class="hero-kicker reveal">你好，我是</p>
+        <h1 class="hero-title reveal">
+          陈堯<span class="accent-block"></span>
+        </h1>
+        <p class="hero-sub reveal">
+          <em>软件工程学生</em> / <em>AI 辅助开发</em> / <em>大语言模型应用</em>
+        </p>
+        <p class="hero-desc reveal">
+          广州软件学院软件工程专业在读，主要使用 Python、Java 和 TypeScript 进行项目开发。
+          正在持续学习前后端开发、数据可视化与 AI 应用构建。
+        </p>
+        <ul class="skill-tags reveal" aria-label="技能关键词">
+          <li>Python</li>
+          <li>Java</li>
+          <li>TypeScript</li>
+          <li>HTML / CSS</li>
+          <li>微信小程序</li>
+          <li>Spring Boot</li>
+          <li>FastAPI</li>
+          <li>RAG</li>
+          <li>向量检索</li>
+          <li>大语言模型 API</li>
+          <li>ECharts</li>
+          <li>Canvas</li>
+          <li>SVG</li>
+          <li>数据可视化</li>
+        </ul>
+      </div>
+      <a href="#works" class="scroll-hint" aria-label="向下滚动查看作品">
+        <span class="scroll-hint-text">SCROLL</span>
+        <span class="scroll-hint-line"></span>
+      </a>
+    </section>
+
+    <!-- ===== 项目作品 ===== -->
+    <section id="works" class="works">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">01 — 项目作品</p>
+          <h2 class="section-title">精选项目</h2>
+        </div>
+        <div class="filter-bar" id="filter-bar" role="group" aria-label="按类别筛选项目">
+          <!-- 筛选按钮由 JS 根据数据自动生成 -->
+        </div>
+        <div class="works-grid" id="works-grid">
+          <!-- 项目卡片由 js/main.js 根据 js/projects.js 渲染 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 关于我 ===== -->
+    <section id="about" class="about">
+      <div class="container about-grid">
+        <div class="about-head">
+          <p class="section-kicker">02 — 关于我</p>
+          <h2 class="section-title">把想法<br>做成可用的<br><span class="text-accent">软件。</span></h2>
+        </div>
+        <div class="about-body">
+          <p class="about-lead reveal">
+            我是陈堯，广州软件学院软件工程专业在读学生。
+            我的学习与项目主要围绕 AI 辅助开发、大语言模型应用和前后端开发展开。
+          </p>
+          <p class="reveal">
+            在技术方面，我使用 Python、Java 和 TypeScript 进行主要开发，接触过微信小程序、Spring Boot、
+            FastAPI、MySQL、Vue、ECharts、Canvas 和 SVG。在 AI 方向，我持续学习 RAG、向量检索、
+            大语言模型 API 调用与 AI 应用构建。我更关注技术如何解决真实问题，
+            并逐渐形成从需求拆解、界面设计、接口实现到部署测试的完整开发意识。
+          </p>
+
+          <div class="about-columns">
+            <div class="about-col reveal">
+              <h3 class="about-col-title">技能结构</h3>
+              <ul class="dot-list">
+                <li><strong>编程语言</strong> — Python · Java · TypeScript · HTML / CSS</li>
+                <li><strong>前端与小程序</strong> — 微信小程序 · Vue · 响应式布局 · ECharts · Canvas · SVG</li>
+                <li><strong>后端与数据</strong> — Spring Boot · FastAPI · MySQL · 微信云开发</li>
+                <li><strong>AI 与大语言模型</strong> — RAG · 向量检索 · 大语言模型 API · Streamlit · 知识索引与引用出处</li>
+                <li><strong>工具与协作</strong> — Git / GitHub · 需求梳理 · 界面设计 · 项目文档 · 测试与迭代</li>
+              </ul>
+            </div>
+            <div class="about-col reveal">
+              <h3 class="about-col-title">做事方式 &amp; 目标</h3>
+              <ul class="dot-list">
+                <li>先明确使用场景，再拆解功能、确定技术方案，最后通过迭代完善</li>
+                <li>跨方向学习：从前端界面到后端接口，从数据可视化到 AI 应用</li>
+                <li>重视落地：项目大多来自具体场景，而不是纯练习</li>
+                <li>短期：完善 AI 应用项目，提升工程化能力与代码质量</li>
+                <li>中期：参与更完整的团队项目，积累协作与产品经验</li>
+                <li>长期：成为能够独立构建 AI 应用的软件工程师</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 联系方式 ===== -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <p class="section-kicker">03 — 联系方式</p>
+        <h2 class="section-title contact-title">如果你对我的项目、技术方向<br>或合作机会感兴趣，<br>欢迎联系我。</h2>
+        <p class="contact-desc reveal">我目前关注 AI 辅助开发、大语言模型应用、前后端开发与数据可视化相关机会。</p>
+        <a class="contact-mail" href="mailto:chenyao@example.com">chenyao@example.com</a>
+        <ul class="social-links">
+          <li><a href="https://github.com/xiaohe-dev" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="https://chenyao.dev" target="_blank" rel="noopener">个人主页 ↗</a></li>
+          <li><span>微信：chenyao</span></li>
+          <li><span>所在地：中国 · 广州</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== 页脚 ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav class="footer-nav" aria-label="页脚导航">
+        <a href="#intro">介绍</a>
+        <a href="#works">项目作品</a>
+        <a href="#about">关于我</a>
+        <a href="#contact">联系方式</a>
+      </nav>
+      <a class="footer-mail" href="mailto:chenyao@example.com">chenyao@example.com</a>
+      <p class="footer-copy">© 2026 陈堯 · 软件工程学生 · AI 辅助开发与大语言模型应用</p>
+    </div>
+  </footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

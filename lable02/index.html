@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>林小满 · 前端 / 全栈开发者作品集</title>
+  <meta name="description" content="林小满的个人作品集 — 前端 / 全栈开发者，展示项目、技术栈与联系方式。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- 顶栏导航 -->
+  <header class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="#hero" class="nav-brand">Lin<span class="dot">.</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active" data-section="home">首页</a>
+        <a href="#projects" class="nav-link" data-section="projects">项目</a>
+        <a href="#skills" class="nav-link" data-section="skills">技能</a>
+        <a href="#about" class="nav-link" data-section="about">关于</a>
+        <a href="#contact" class="nav-link btn-nav" data-section="contact">联系我</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 英雄区 -->
+  <section class="hero" id="home">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="hero-eyebrow" data-reveal>你好，我是林小满 👋</p>
+        <h1 class="hero-title" data-reveal>
+          用代码与创意<br />打造<span class="grad">有温度的体验</span>
+        </h1>
+        <p class="hero-sub" data-reveal>
+          一名充满好奇心的<span class="highlight">前端 / 全栈开发者</span>，
+          专注于构建优雅、响应式的 Web 产品，把想法变成可用的作品。
+        </p>
+        <div class="hero-actions" data-reveal>
+          <a href="#projects" class="btn btn-primary">查看项目</a>
+          <a href="#contact" class="btn btn-ghost">联系我</a>
+        </div>
+        <div class="hero-meta" data-reveal>
+          <div class="meta-item"><strong>3+</strong><span>年经验</span></div>
+          <div class="meta-item"><strong>20+</strong><span>个项目</span></div>
+          <div class="meta-item"><strong>12</strong><span>位合作者</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" data-reveal-delay>
+        <div class="avatar-card">
+          <div class="avatar-emoji">🧑‍💻</div>
+          <div class="avatar-info">
+            <h3>林小满</h3>
+            <p>Web Developer</p>
+          </div>
+        </div>
+        <div class="floating-chip chip-1">✨ React</div>
+        <div class="floating-chip chip-2">⚡ Fast &amp; Responsive</div>
+        <div class="floating-chip chip-3">💙 Clean Code</div>
+      </div>
+    </div>
+    <a href="#projects" class="scroll-hint" aria-label="向下滚动">
+      <span class="mouse"><span class="wheel"></span></span>
+    </a>
+  </section>
+
+  <!-- 项目展示 -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">精选<span class="grad">项目</span></h2>
+        <p class="section-desc">这里是一些我做过并为之自豪的作品。</p>
+      </div>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </div>
+  </section>
+
+  <!-- 技能 -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="section-tag">Skills</span>
+        <h2 class="section-title">我的<span class="grad">技术栈</span></h2>
+        <p class="section-desc">持续学习，热爱探索新技术。</p>
+      </div>
+      <div class="skills-list" id="skillsList"></div>
+    </div>
+  </section>
+
+  <!-- 关于我 -->
+  <section class="section about" id="about">
+    <div class="container about-grid">
+      <div class="about-visual" data-reveal>
+        <div class="about-card">
+          <div class="about-emoji">🙌</div>
+          <h3>保持热忱</h3>
+          <p>每天学习一点，就会多强大一点。</p>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-head left" data-reveal>
+          <span class="section-tag">About</span>
+          <h2 class="section-title">关于<span class="grad">我</span></h2>
+        </div>
+        <p class="about-para" data-reveal>
+          我从写第一行 <code>&lt;h1&gt;</code> 开始喜欢上编程。从此，前端成为一个开放世界：
+          从响应式布局、交互动效，到全栈的 API 与数据库设计，我总在享受把抽象需求变成流畅体验的过程。
+        </p>
+        <p class="about-para" data-reveal>
+          我相信好的作品不仅是技术的堆叠，更是对用户需求的共情。业余时间我热衷于参与开源，
+          并写一些让界面更好看的 CSS 小工具。
+        </p>
+        <div class="about-highlights" data-reveal>
+          <div class="highlight"><span class="h-icon">🎯</span><div><h4>专注交付</h4><p>注重细节与体验</p></div></div>
+          <div class="highlight"><span class="h-icon">🤝</span><div><h4>协作精神</h4><p>擅长跨团队沟通</p></div></div>
+          <div class="highlight"><span class="h-icon">🚀</span><div><h4>快速学习</h4><p>拥抱新技术</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="section-tag">Contact</span>
+        <h2 class="section-title">一起<span class="grad">聊聊</span></h2>
+        <p class="section-desc">无论是有趣的项目、合作机会，还是想打个招呼，随时欢迎。</p>
+      </div>
+      <div class="contact-inner">
+        <div class="contact-channels" data-reveal>
+          <a href="mailto:hello@ximan.dev" class="channel-card">
+            <span class="channel-icon">📧</span>
+            <div><h4>Email</h4><p>hello@ximan.dev</p></div>
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener" class="channel-card">
+            <span class="channel-icon">🐙</span>
+            <div><h4>GitHub</h4><p>github.com/ximan</p></div>
+          </a>
+          <a href="https://weixin.qq.com" target="_blank" rel="noopener" class="channel-card">
+            <span class="channel-icon">💬</span>
+            <div><h4>微信</h4><p>ximan-dev</p></div>
+          </a>
+        </div>
+        <form class="contact-form" id="contactForm" data-reveal>
+          <div class="field">
+            <label for="name">姓名</label>
+            <input type="text" id="name" name="name" placeholder="你的名字" required />
+          </div>
+          <div class="field">
+            <label for="email">邮箱</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field">
+            <label for="message">留言</label>
+            <textarea id="message" name="message" rows="4" placeholder="想对我说点什么…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">发送留言 ✦</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> 林小满 · 用心打造作品集</p>
+      <p class="footer-links">
+        <a href="mailto:hello@ximan.dev">Email</a>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
